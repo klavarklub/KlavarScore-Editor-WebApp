@@ -1659,7 +1659,7 @@ window.__klavarIv=setInterval(function(){
                 let durPx=doc.createElement('span'); durPx.textContent='beats'; durPx.style.fontSize='10px';
 
                 let delBtn=doc.createElement('button');
-                delBtn.textContent='✕';
+                delBtn.textContent='X';
                 delBtn.title='remove';
                 delBtn.style.cssText='padding:1px 3px; font-size:10px; background:#eee;color:#000!important; border:1px solid #ccc; border-radius:3px; cursor:pointer;';
 
@@ -3830,7 +3830,7 @@ try{ window.__displayToInternal=__displayToInternal; window.__isPickupHidingNumb
 </script>
 <style>
   #mode-bar{position:static; transform:none; z-index:10; display:flex; gap:10px; pointer-events:auto; margin: 8px 0 16px 0; padding: 0 2px;}
-  #mode-bar button{padding:8px 14px; border-radius:8px; border:1px solid rgba(0,0,0,0.15); font-weight:600; box-shadow:0 1px 4px rgba(0,0,0,0.1); cursor:pointer; font-size:12px; background:white; color:#111; }
+  #mode-bar button{padding:8px 14px; border-radius:8px; border:1px solid rgba(0,0,0,0.15); font-weight:600; box-shadow:0 1px 4px rgba(0,0,0,0.1); cursor:pointer; font-size:18px; background:white; color:#111; }
   #mode-bar button#btn-long-pdf{background:#6c5ce7 !important; color:white !important; border:none;}
   #mode-bar button#btn-toggle-mode{background:#111; color:white; border:none;}
   body:not(.long-mode) #btn-long-pdf{ display:none !important; }
@@ -6495,7 +6495,7 @@ return ee("g",{onPointerDown:(ne)=>zp(ne,__gId),style:{cursor:"pointer"},childre
       W("circle",{cx:xBase,cy:yT,r:6,fill:isSel?"#dbeafe":"white",stroke:isSel?"#2563eb":"black",strokeWidth:0.8,style:{cursor:"ns-resize"},onPointerDown:(e)=>onDrag('top',e)}),
       W("circle",{cx:xBase,cy:yB,r:6,fill:isSel?"#dbeafe":"white",stroke:isSel?"#2563eb":"black",strokeWidth:0.8,style:{cursor:"ns-resize"},onPointerDown:(e)=>onDrag('bottom',e)}),
       W("circle",{cx:xBase,cy:(yT+yB)/2,r:5,fill:isSel?"#2563eb":"white",stroke:"black",strokeWidth:0.6,style:{cursor:"move"},onPointerDown:(e)=>onDrag('move',e)}),
-      W("text",{x:xBase+12,y:(yT+yB)/2+4,fontSize:10,fill:"black",opacity:0.8,style:{cursor:"pointer",userSelect:"none"},onClick:(e)=>{e.stopPropagation();__deleteHairpin(hp.id);},children:"✕"})
+      W("text",{x:xBase+12,y:(yT+yB)/2+4,fontSize:10,fill:"black",opacity:0.8,style:{cursor:"pointer",userSelect:"none"},onClick:(e)=>{e.stopPropagation();__deleteHairpin(hp.id);},children:"X"})
     ]}):null
   ]},hp.id);
 })), (__octaves||[]).filter(oc=>{ if((oc.pageIdx==null?0:oc.pageIdx)!==__octPageIndex)return false; let __octNs=r.filter(nn=>(oc.noteIds||[]).includes(nn.id)); if(!__octNs.length)return false; for(let __oi=0;__oi<xp.length;__oi++){ let __cm=(__mpc&&__mpc[__oi]!=null?__mpc[__oi]:Ne); if(__octNs.some(nn=>Number(nn.m)>=xp[__oi].start&&Number(nn.m)<xp[__oi].start+__cm) && __oi===g) return true; } return false; }).map((oc)=>{
@@ -10571,7 +10571,7 @@ document.getElementById('btn-long-pdf').onclick = async function(){
             // handles - MUCH bigger for mobile
             const del=document.createElement('button');
             del.className='klavar-box-del';
-            del.textContent='✕';
+            del.textContent='X';
             del.style.cssText=`position:absolute;top:-14px;right:-14px;width:${isTouch?34:22}px;height:${isTouch?34:22}px;background:#111;color:#fff;border-radius:50%;border:2px solid #fff;font-size:${isTouch?16:12}px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:30;touch-action:manipulation;box-shadow:0 2px 6px rgba(0,0,0,0.3);`;
             del.addEventListener('pointerdown', e=>{ e.stopPropagation(); e.preventDefault(); });
             del.addEventListener('click', e=>{ e.stopPropagation(); deleteBox(b.id); });
@@ -10586,7 +10586,7 @@ document.getElementById('btn-long-pdf').onclick = async function(){
 
             const resFont=document.createElement('div');
             resFont.className='klavar-box-resize-font';
-            resFont.textContent='A↔';
+            resFont.textContent='A<->';
             resFont.title='Drag left/right to change font size';
             resFont.style.cssText=`position:absolute;bottom:-14px;left:-14px;width:${isTouch?44:28}px;height:${isTouch?34:28}px;background:#111;color:#fff;border-radius:${isTouch?10:14}px;border:2px solid #fff;font-size:${isTouch?13:10}px;display:flex;align-items:center;justify-content:center;cursor:ew-resize;z-index:30;touch-action:none;box-shadow:0 2px 6px rgba(0,0,0,0.3);`;
             el.appendChild(resFont);
